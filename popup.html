@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Wasted Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <h1>Time Tracker</h1>
+      </div>
+      <div class="header-controls">
+        <button id="toggle-view-btn" class="view-toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span id="toggle-view-text">Past 7 Days</span>
+        </button>
+        <div class="date-display" id="date-display">Today</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-card">
+        <p class="summary-label">Total Browsing Time</p>
+        <h2 class="summary-time" id="total-time">0m 0s</h2>
+        
+        <div class="productivity-bar-container">
+          <div class="productivity-bar">
+            <div class="bar-segment productive-bar" id="prod-bar" style="width: 50%;"></div>
+            <div class="bar-segment unproductive-bar" id="unprod-bar" style="width: 50%;"></div>
+          </div>
+          <div class="productivity-legend">
+            <div class="legend-item">
+              <span class="legend-dot productive-dot"></span>
+              <span class="legend-label" id="prod-time">0m 0s Productive</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot unproductive-dot"></span>
+              <span class="legend-label" id="unprod-time">0m 0s Unproductive</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sites-section">
+        <div class="section-header">
+          <h3>Top Sites</h3>
+        </div>
+        
+        <div class="sites-list" id="sites-list">
+          <!-- Site items will be injected here via JS -->
+          <div class="empty-state">No browsing data yet today.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Data stored locally. Private by default.</p>
+    </footer>
+  </div>
+
+  <!-- Using type="module" allows us to import from utils.js -->
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
