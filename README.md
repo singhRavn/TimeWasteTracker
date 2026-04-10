@@ -2,6 +2,10 @@
 
 A modern, visually appealing Chrome extension that tracks how much time you spend on different websites and helps you visualize your browsing habits.
 
+## Demo
+
+![Time Tracker Demo Video](demo_video.webp)
+
 ## Features
 
 - **Real-time Tracking:** Runs seamlessly in the background and precisely measures your time spent per website. tracking automatically pauses when you switch away from your browser or go idle.
